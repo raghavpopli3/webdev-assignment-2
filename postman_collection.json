@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "b3e94a81-d142-4f32-8419-75a7c936df31",
+    "name": "Student Management REST API",
+    "description": "Postman Collection for Lab Assignment 2 - Student Management REST API (Node.js & Express)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET All Students (200 OK)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/students",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["students"]
+        },
+        "description": "Retrieve all student records from in-memory array."
+      },
+      "response": []
+    },
+    {
+      "name": "2. GET Student by ID (200 OK)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/students/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["students", "1"]
+        },
+        "description": "Retrieve a specific student by their numerical ID."
+      },
+      "response": []
+    },
+    {
+      "name": "3. POST Create Student (201 Created)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Sneha Verma\",\n  \"course\": \"MCA\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/students",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["students"]
+        },
+        "description": "Add a new student record to the system."
+      },
+      "response": []
+    },
+    {
+      "name": "4. PUT Update Student (200 OK)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Rahul Sharma\",\n  \"course\": \"BCA Honours\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/students/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["students", "1"]
+        },
+        "description": "Update an existing student's details by their ID."
+      },
+      "response": []
+    },
+    {
+      "name": "5. DELETE Student (200 OK)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/students/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["students", "3"]
+        },
+        "description": "Delete a student record by ID."
+      },
+      "response": []
+    },
+    {
+      "name": "6. Error Test - GET 404 Not Found",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/students/999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["students", "999"]
+        },
+        "description": "Test 404 error handling when student ID does not exist."
+      },
+      "response": []
+    },
+    {
+      "name": "7. Error Test - POST 400 Bad Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/students",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["students"]
+        },
+        "description": "Test 400 Bad Request when required body fields are missing or empty."
+      },
+      "response": []
+    }
+  ]
+}
