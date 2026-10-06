@@ -1,9 +1,3 @@
-# Student Management REST API
-
-**Course:** Web Dev III (Node.js & Express Backend)  
-**Unit:** Unit–2  
-**Lab:** Lab Assignment 2 – In-Class Lab  
-**Marks:** 2.5  
 
 ---
 
